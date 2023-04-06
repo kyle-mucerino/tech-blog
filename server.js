@@ -12,7 +12,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const handlebars = require('express-handlebars');
 app.set('view engine', 'hbs');
-app.engine('hbs', handlebars.engine({ layoutsDir: __dirname + '/Views/layouts', }));
+app.engine('hbs', handlebars.engine({ layoutsDir: __dirname + '/views/layouts', }));
 extname: 'hbs';
 
 const sess = {
