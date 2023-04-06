@@ -10,10 +10,11 @@ const PORT = process.envPORT || 3001;
 const sequelize = require("./config/config");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
-const handlebars = require("express-handlebars");
-app.set("view engine", "hbs");
+// const handlebars = require("express-handlebars");
+
 const hbs = exphbs.create({ helpers });
 app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
 
 const sess = {
   secret: "Super secret secret",
