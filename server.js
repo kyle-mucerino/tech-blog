@@ -13,7 +13,7 @@ const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const handlebars = require("express-handlebars");
 app.set("view engine", "hbs");
 const hbs = exphbs.create({ helpers });
-_app.engine_("handlebars", _hbs._engine);
+app.engine("handlebars", _hbs._engine);
 extname: "hbs";
 
 const sess = {
@@ -38,7 +38,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
 
 
-app.get("/", (req, res) => res.render("main.hbs", { layout: "index.hbs" }));
+app.get("/", (req, res) => res.render("login.hbs", { layout: "main.hbs" }));
 
 app.use(require("./controllers/"));
 
