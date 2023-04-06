@@ -14,7 +14,6 @@ const handlebars = require("express-handlebars");
 app.set("view engine", "hbs");
 const hbs = exphbs.create({ helpers });
 app.engine("handlebars", hbs.engine);
-extname: "hbs";
 
 const sess = {
   secret: "Super secret secret",
@@ -38,7 +37,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
 
 
-app.get("/", (req, res) => res.render("test.hbs", { layout: "main.hbs" }));
+//app.get("/", (req, res) => res.render("test.handlebars", { layout: "main.handlebars" }));
 
 app.use(require("./controllers/"));
 
