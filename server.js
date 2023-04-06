@@ -2,9 +2,12 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const session = require('express-session');
 const helpers = require('./utils/helpers');
+const path = require('path');
 
 const app = express();
 const PORT = process.envPORT || 3001;
+
+const sequelize = require('./')
 
 const handlebars = require('express-handlebars');
 app.set('view engine', 'hbs');
