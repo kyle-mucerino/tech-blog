@@ -10,6 +10,8 @@ extname: 'hbs';
 
 app.use(express.static('public'));
 
+const hbs = exphbs.create({ helpers });
+
 app.get('/', (req, res) => res.render('main.hbs', {layout : 'index.hbs'}));
 
 app.listen(PORT, () => console.log(`App listening to port ${PORT}`));
