@@ -13,7 +13,8 @@ router.get("/", withAuth, async (req, res) => {
     const posts = postData.map((post) => post.get({ plain: true }));
 
     res.render("all-posts-admin", {
-      layout: "dashboard",
+      loggedIn: req.session.loggedIn,
+      dashboard: true, 
       posts
     });
   } catch (err) {
@@ -22,9 +23,7 @@ router.get("/", withAuth, async (req, res) => {
 });
 
 router.get("/new", withAuth, (req, res) => {
-  res.render("new-post", {
-    layout: "dashboard"
-  });
+  res.render("new-post", {loggedIn: req.session.loggedIn});
 });
 
 router.get("/edit/:id", withAuth, async (req, res) => {
@@ -35,7 +34,7 @@ router.get("/edit/:id", withAuth, async (req, res) => {
       const post = postData.get({ plain: true });
 
       res.render("edit-post", {
-        layout: "dashboard",
+        loggedIn: req.session.loggedIn,
         post
       });
     } else {
