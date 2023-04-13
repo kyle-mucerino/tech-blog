@@ -1,3 +1,3 @@
-CREATE DATABASE tech_blog_datab;
+DROP DATABASE IF EXISTS tech_blog_datab;
 
-CREATE TABLE user;
+CREATE DATABASE tech_blog_datab;
